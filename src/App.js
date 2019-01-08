@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import styled, { css } from 'styled-components';
-import { ENETDOWN } from 'constants';
 
 
 const Button = styled.button`
@@ -21,6 +20,9 @@ const BlueBotton = styled(Button)`
   color: blue;
   border: 2px solid blue;
 `
+const ReversedButton = props => <button {...props}
+  children={props.children.split('').reverse()} />
+
 
 class App extends Component {
   render() {
@@ -32,7 +34,8 @@ class App extends Component {
         <Button primary>I'm a styled Primary Button!</Button>
         <Button>I'm a styled Button!</Button>
         <BlueBotton>Blue button</BlueBotton>
-
+        <Button as="a" href="https://www.google.com/" target="_blank">This is a link</Button>
+        <BlueBotton as={ReversedButton}>Reversed text using other custom component</BlueBotton>
       </div>
     );
   }
