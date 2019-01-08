@@ -23,6 +23,15 @@ const BlueBotton = styled(Button)`
 const ReversedButton = props => <button {...props}
   children={props.children.split('').reverse()} />
 
+const Link = ({className, children}) => (
+  <a className={className}>
+    {children}
+  </a>
+);
+
+const StyledLink = styled(Link)`
+  color: palevioletred;
+`
 
 class App extends Component {
   render() {
@@ -36,6 +45,8 @@ class App extends Component {
         <BlueBotton>Blue button</BlueBotton>
         <Button as="a" href="https://www.google.com/" target="_blank">This is a link</Button>
         <BlueBotton as={ReversedButton}>Reversed text using other custom component</BlueBotton>
+        <Link>This is a normal link</Link>
+        <StyledLink>This is a styled link</StyledLink>
       </div>
     );
   }
