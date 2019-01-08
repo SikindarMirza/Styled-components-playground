@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import styled, { css } from 'styled-components';
+import Counter from './Counter';
 
 
 const Button = styled.button`
@@ -33,8 +34,8 @@ const StyledLink = styled(Link)`
   color: palevioletred;
 `
 const Input = styled.input`
-  padding: 0.5;
-  margin: 1;
+  padding: 1px;
+  margin: 1px;
   color: ${props => props.inputColor || "red"};
   background: #999;
   border: none;
@@ -45,8 +46,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-         
+        {/* <header className="App-header">         
         </header> */}
         <Button primary>I'm a styled Primary Button!</Button>
         <Button>I'm a styled Button!</Button>
@@ -56,6 +56,7 @@ class App extends Component {
         <Link>This is a normal link</Link>
         <StyledLink>This is a styled link</StyledLink>
         <Input inputColor="#fff" placeholder="Please enter..." type="text"/>
+        <Counter/>
       </div>
     );
   }
