@@ -32,7 +32,15 @@ const Link = ({className, children}) => (
 const StyledLink = styled(Link)`
   color: palevioletred;
 `
-
+const Input = styled.input`
+  padding: 0.5;
+  margin: 1;
+  color: ${props => props.inputColor || "red"};
+  background: #999;
+  border: none;
+  border-radius: 4px;
+  height: 2rem;;
+`
 class App extends Component {
   render() {
     return (
@@ -47,6 +55,7 @@ class App extends Component {
         <BlueBotton as={ReversedButton}>Reversed text using other custom component</BlueBotton>
         <Link>This is a normal link</Link>
         <StyledLink>This is a styled link</StyledLink>
+        <Input inputColor="#fff" placeholder="Please enter..." type="text"/>
       </div>
     );
   }
